@@ -6,8 +6,8 @@ VALUES ("Administration"),
        ("Marketing");
 
 -- role
-INSERT INTO role (title, salary, department_id)
-VALUES (Administrative Assistant, 60000, 1),
+INSERT INTO role (title, salary, dept_id)
+VALUES (Administration Assistant, 60000, 1),
        (IT Support, 80000, 2),
        (Sales Associate, 50000, 3),
        (Marketing Director, 70000, 4),
@@ -18,11 +18,11 @@ VALUES (Administrative Assistant, 60000, 1),
 -- employee
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES  ("Gerald", "Gin", 2, NULL),
-        ("Alanna", "Apple", 4, NULL),
+        ("Alanna", "Apple", 4, 1),
         ("Don", "Donut", 1, NULL),
-        ("Steven", "Soup", 5, NULL),
+        ("Steven", "Soup", 5, 4),
         ("Nina", "Nine", 4, NULL),
-        ("Beatrice", "Brownie", 6, NULL),
+        ("Beatrice", "Brownie", 6, 3),
         ("Patty", "Pancake", 3, NULL),
-        ("Tanya", "Tangerine", 7, NULL),
+        ("Tanya", "Tangerine", 7, 2),
 
