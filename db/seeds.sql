@@ -1,19 +1,19 @@
 -- department
-INSERT INTO department (department_name)
-VALUES ("Administration"),
-       ("Technical"),
-       ("Sales"),
-       ("Marketing");
+INSERT INTO department (dept_name)
+VALUES ('Administration'),
+       ('Technical'),
+       ('Sales'),
+       ('Marketing');
 
--- role
 INSERT INTO role (title, salary, dept_id)
-VALUES (Administration Assistant, 60000, 1),
-       (IT Support, 80000, 2),
-       (Sales Associate, 50000, 3),
-       (Marketing Director, 70000, 4),
-       (Accountant, 80000, 1),
-       (Engineer, 90000, 2),
-       (Researcher, 90000, 4);
+VALUES 
+       ('Administration Assistant', 60000, 1),
+       ('IT Support', 80000, 2),
+       ('Sales Associate', 50000, 3),
+       ('Marketing Director', 70000, 4),
+       ('Accountant', 80000, 1),
+       ('Engineer', 90000, 2),
+       ('Researcher', 90000, 4);
 
 -- employee
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
