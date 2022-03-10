@@ -1,16 +1,28 @@
--- INSERT INTO movies (movie_name)
--- VALUES ("Lion King"),
---        ("The Godfather"),
---        ("West Side Story"),
---        ("Parasite"),
---        ("The Wizard of Oz");
+-- department
+INSERT INTO department (department_name)
+VALUES ("Administration"),
+       ("Technical"),
+       ("Sales"),
+       ("Marketing");
 
--- INSERT INTO reviews (movie_id, review)
--- VALUES (1, "Zazu is underrated. Give that hornbill a sequel!"),
---        (2, "I'm gonna make him an offer you can't refuse, watch this movie"),
---        (1, "Scar is the lion everyone loves to hate"),
---        (3, "Ten years of ballet and three years of tap to join a gang in this neighborhood"),
---        (5, "The tin man gave a metallic, hollow performance"),
---        (1, "Hakuna matata"),
---        (5, "Those flying monkeys are nightmare fuel!");
-       
+-- role
+INSERT INTO role (title, salary, department_id)
+VALUES (Administrative Assistant, 60000, 1),
+       (IT Support, 80000, 2),
+       (Sales Associate, 50000, 3),
+       (Marketing Director, 70000, 4),
+       (Accountant, 80000, 1),
+       (Engineer, 90000, 2),
+       (Researcher, 90000, 4);
+
+-- employee
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES  ("Gerald", "Gin", 2, NULL),
+        ("Alanna", "Apple", 4, NULL),
+        ("Don", "Donut", 1, NULL),
+        ("Steven", "Soup", 5, NULL),
+        ("Nina", "Nine", 4, NULL),
+        ("Beatrice", "Brownie", 6, NULL),
+        ("Patty", "Pancake", 3, NULL),
+        ("Tanya", "Tangerine", 7, NULL),
+
