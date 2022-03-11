@@ -16,7 +16,7 @@ const db = mysql.createConnection(
     console.log(`Connected to the employees_db database.`)
   );
 
-//   Start prompts
+//   Start prompts and choices 
   menuSelection = () => {
     inquirer.prompt([
         {
@@ -82,9 +82,9 @@ viewAllDepartments = () => {
   // table that includes the department and role of each of the employees
   viewAllEmployees = () => {
     db.query(
-      `SELECT employee.id, employee.first_name, employee.last_name, role.title, department.name AS department, role.salary, 
-    CONCAT(manager.first_name, ' ', manager.last_name) AS manager FROM employee LEFT JOIN role on employee.role_id = role.id LEFT JOIN 
-    department on role.department_id = department.id LEFT JOIN employee manager on manager.id = employee.manager_id;`,
+      `SELECT employee.id AS EMPLOYEE from employee, (employee.first_name, employee.last_name) AS EMPLOYEE from employee, department.name AS department`,
+    //  role.title AS role, department.name AS department, role.salary, 
+    // CONCAT(manager.first_name, ' ', manager.last_name) AS manager FROM employee;`,
       (err, result) => {
         if (err) throw err;
         console.table(result);
@@ -103,6 +103,7 @@ addRole = () => {
           message: 'What is the name of the role?',
         },
         {
+            // add salary value
           name: 'salary',
           type: 'number',
           message: 'What is the salary for the role?',
@@ -116,6 +117,7 @@ addRole = () => {
           },
         },
         {
+            // role  belongs to which department
           name: 'department_id',
           type: 'list',
           message: 'Which department does the role belong to?',

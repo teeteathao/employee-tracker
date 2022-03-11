@@ -1,4 +1,5 @@
 use employee_db;
+
 -- department
 INSERT INTO department (dept_name)
 VALUES ('Administration'),
@@ -25,5 +26,4 @@ VALUES  ("Gerald", "Gin", 2, NULL),
         ("Nina", "Nine", 4, NULL),
         ("Beatrice", "Brownie", 6, 3),
         ("Patty", "Pancake", 3, NULL),
-        ("Tanya", "Tangerine", 7, 2),
-
+        ("Tanya", "Tangerine", 7, 2);
