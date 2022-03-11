@@ -81,17 +81,12 @@ viewAllDepartments = () => {
   
   // table that includes the department and role of each of the employees
   viewAllEmployees = () => {
-    db.query(
-      `SELECT employee.id AS EMPLOYEE from employee, (employee.first_name, employee.last_name) AS EMPLOYEE from employee, department.name AS department`,
-    //  role.title AS role, department.name AS department, role.salary, 
-    // CONCAT(manager.first_name, ' ', manager.last_name) AS manager FROM employee;`,
-      (err, result) => {
+    db.query(`SELECT * FROM employee`, (err, result) => {
         if (err) throw err;
         console.table(result);
         menuSelection();
-      }
-    );
-  };
+      });
+    };
 
   // add role and salary
 addRole = () => {
